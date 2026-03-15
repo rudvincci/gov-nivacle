@@ -1,0 +1,11 @@
+{
+  "name": "gov-nivacle",
+  "version": "1.0.0",
+  "description": "Gov Nivacle \u2014 Ierahkwa Sovereign Platform",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "private": true
+}
