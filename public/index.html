@@ -2,7 +2,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Gobierno Soberano — Nivaclé</title>
 <meta name="description" content="Gobierno soberano de la Nacion Nivaclé — Region Sur América — Ierahkwa Ne Kanienke">
-<link rel="stylesheet" href="/css/ierahkwa.css">
+<link rel="stylesheet" href="../shared/ierahkwa.css">
 <style>
 :root{--ncolor:#e040fb;--accent:#00FF41}
 .gov-hero{position:relative;overflow:hidden;padding:5rem 2rem 3rem;text-align:center;min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
@@ -48,6 +48,7 @@
 <nav class="nav-bar">
   <a href="../sovereign-governance/" style="font-family:'Orbitron',sans-serif;font-weight:800;color:var(--ncolor)">← 574 Naciones</a>
   <div style="display:flex;gap:.8rem;align-items:center;flex-wrap:wrap">
+    <a href="#historia">Historia</a>
     <a href="#gobierno">Gobierno</a>
     <a href="#constitucion">Constitucion</a>
     <a href="#servicios">Servicios</a>
@@ -91,6 +92,35 @@
     <div class="gcard"><div class="gi">🛡️</div><h4>Guardia Soberana</h4><p>Seguridad nacional. Guardia Soberana, defensa territorial, ciberseguridad.</p></div>
     <div class="gcard"><div class="gi">👴</div><h4>Consejo de Ancianos</h4><p>Sabiduria ancestral. Asesoria espiritual, mediacion, preservacion cultural.</p></div>
     <div class="gcard"><div class="gi">🌿</div><h4>Comite 7 Generaciones</h4><p>Impacto a 175 anos. Poder de veto sobre proyectos daninos. Guardian del futuro.</p></div>
+  </div>
+</section>
+
+
+<section class="section" id="historia">
+  <h2>📜 Historia y Origen</h2>
+  <p class="sd">Pueblo ancestral de Abya Yala. Guardianes de la selva, las montanas o las costas. Resistencia milenaria contra la colonizacion.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem">
+    <div class="gcard" style="border-top:2px solid var(--ncolor)">
+      <div class="gi">🗺️</div>
+      <h4>Territorio Ancestral</h4>
+      <p>Region: Sur America. Territorio ancestral de la Nacion Nivacle, custodios de estas tierras desde tiempos inmemoriales.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid var(--ncolor)">
+      <div class="gi">🗣️</div>
+      <h4>Lengua</h4>
+      <p>Lengua ancestral de la Nacion Nivacle. Programa de preservacion y revitalizacion lingueistica activo a traves de Ierahkwa.</p>
+    </div>
+  </div>
+
+  <h2 style="margin-top:2rem">⏳ Linea del Tiempo</h2>
+  <p class="sd">Momentos clave en la historia de la Nacion Nivacle.</p>
+  <div class="timeline">
+<div class="tl-item"><div class="tl-year">Pre-contacto</div><div class="tl-text">Civilizacion ancestral en armonia con la tierra</div></div>
+<div class="tl-item"><div class="tl-year">1492-1550</div><div class="tl-text">Invasion europea — resistencia y supervivencia</div></div>
+<div class="tl-item"><div class="tl-year">Siglo XIX</div><div class="tl-text">Independencia de paises pero no de pueblos indigenas</div></div>
+<div class="tl-item"><div class="tl-year">Siglo XX</div><div class="tl-text">Luchas por reconocimiento y derechos territoriales</div></div>
+<div class="tl-item"><div class="tl-year">Siglo XXI</div><div class="tl-text">Soberania digital y reconocimiento con Ierahkwa</div></div>
   </div>
 </section>
 
@@ -187,6 +217,6 @@
 <script>
 (function(){const c=document.getElementById('particles');if(!c)return;const x=c.getContext('2d');let W,H;function r(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight}r();window.addEventListener('resize',r);const p=Array.from({length:40},()=>({x:Math.random()*2000,y:Math.random()*1000,s:Math.random()*2+.5,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)-.1,a:Math.random()*.4+.1}));function d(){x.clearRect(0,0,W,H);p.forEach(i=>{i.x+=i.dx;i.y+=i.dy;if(i.x<0)i.x=W;if(i.x>W)i.x=0;if(i.y<0)i.y=H;if(i.y>H)i.y=0;x.beginPath();x.arc(i.x,i.y,i.s,0,Math.PI*2);x.fillStyle=`#e040fb${Math.round(i.a*255).toString(16).padStart(2,'0')}`;x.fill()});requestAnimationFrame(d)}d()})();
 </script>
-<script src="/js/ierahkwa-interop.js"></script>
-<script src="/js/ierahkwa-agents.js"></script>
+<script src="../shared/ierahkwa-interop.js"></script>
+<script src="../shared/ierahkwa-agents.js"></script>
 </body></html>
