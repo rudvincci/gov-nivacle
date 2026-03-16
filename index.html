@@ -1,0 +1,438 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gobierno Soberano — Nivaclé</title>
+<meta name="description" content="Gobierno soberano de la Nacion Nivaclé — Region Sur América — Ierahkwa Ne Kanienke">
+<link rel="stylesheet" href="../shared/ierahkwa.css">
+<style>
+:root{--ncolor:#e040fb;--accent:#00FF41}
+.gov-hero{position:relative;overflow:hidden;padding:5rem 2rem 3rem;text-align:center;min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.gov-hero canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.gov-hero>*:not(canvas){position:relative;z-index:1}
+.gov-seal{width:140px;height:140px;border-radius:50%;border:3px solid var(--ncolor);display:flex;align-items:center;justify-content:center;font-size:4rem;margin:0 auto 1rem;background:radial-gradient(circle,rgba(255,255,255,.04),transparent);box-shadow:0 0 40px #e040fb30;animation:sp 4s ease infinite}
+@keyframes sp{0%,100%{box-shadow:0 0 20px #e040fb15}50%{box-shadow:0 0 50px #e040fb30}}
+.gov-title{font-family:'Orbitron',sans-serif;font-size:clamp(1.5rem,3.5vw,2.5rem);font-weight:900;color:#fff;margin:.5rem 0}
+.gov-sub{color:var(--txt2);font-size:.9rem;max-width:600px;margin:.5rem auto;line-height:1.5}
+.badge-row{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:1rem}
+.gbadge{display:inline-flex;align-items:center;gap:.3rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:.35rem .8rem;border-radius:2rem;font-size:.65rem;color:var(--ncolor);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.section{max-width:1100px;margin:0 auto;padding:2.5rem 2rem}
+.section h2{font-family:'Orbitron',sans-serif;font-size:1.3rem;color:var(--ncolor);margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
+.section p.sd{color:var(--txt2);font-size:.82rem;margin-bottom:1.5rem;line-height:1.5}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+.grid4{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.8rem}
+.gcard{background:rgba(13,26,45,.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.3rem;transition:all .3s}
+.gcard:hover{border-color:var(--ncolor);transform:translateY(-3px)}
+.gcard .gi{font-size:1.8rem;margin-bottom:.5rem}
+.gcard h4{font-family:'Orbitron',sans-serif;font-size:.8rem;font-weight:700;color:var(--ncolor);margin-bottom:.2rem}
+.gcard p{font-size:.72rem;color:var(--txt2);line-height:1.4}
+.stat-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin:2rem 0}
+.stat{text-align:center;min-width:100px}
+.stat .sv{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:900;color:var(--ncolor)}
+.stat .sl{font-size:.65rem;color:var(--txt2);text-transform:uppercase;letter-spacing:.1em}
+.const-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem}
+.const-card{background:rgba(13,26,45,.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.04);border-radius:12px;padding:1rem;transition:all .3s}
+.const-card:hover{border-color:var(--ncolor)}
+.const-num{font-family:'Orbitron',sans-serif;font-size:.6rem;color:var(--ncolor);font-weight:700}
+.const-t{font-size:.8rem;font-weight:700;color:#fff;margin:.2rem 0}
+.const-d{font-size:.68rem;color:var(--txt2);line-height:1.4}
+.nav-bar{background:rgba(10,14,23,.92);backdrop-filter:blur(20px);border-bottom:1px solid #e040fb20;padding:.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99;flex-wrap:wrap;gap:.5rem}
+.nav-bar a{color:var(--txt2);text-decoration:none;font-size:.72rem;font-weight:600}
+.footer{background:rgba(10,14,23,.95);border-top:1px solid #e040fb15;padding:2rem;text-align:center;margin-top:2rem}
+.footer .fn{font-family:'Orbitron',sans-serif;font-size:.85rem;color:var(--ncolor)}
+.footer .fs{font-size:.65rem;color:var(--txt2);margin-top:.3rem}
+.plat-grid{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
+.plat-chip{display:inline-flex;align-items:center;gap:.3rem;padding:.3rem .7rem;border-radius:2rem;font-size:.6rem;font-weight:600;border:1px solid rgba(255,255,255,.1);background:rgba(13,26,45,.6);color:var(--txt2);text-decoration:none;transition:all .2s}
+.plat-chip:hover{border-color:var(--ncolor);color:var(--ncolor)}
+@media(max-width:600px){.grid3,.grid4{grid-template-columns:1fr 1fr}.gov-hero{padding:3rem 1rem 2rem}}
+</style></head><body>
+
+<nav class="nav-bar">
+  <a href="../sovereign-governance/" style="font-family:'Orbitron',sans-serif;font-weight:800;color:var(--ncolor)">← 574 Naciones</a>
+  <div style="display:flex;gap:.8rem;align-items:center;flex-wrap:wrap">
+    <a href="#historia">Historia</a>
+    <a href="#gobierno">Gobierno</a>
+    <a href="#constitucion">Constitucion</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#infraestructura">Infraestructura</a>
+    <a href="#plataformas">Plataformas</a>
+    <a href="../departamentos-centrales/" style="color:var(--ncolor)">Departamentos</a>
+    <a href="../gobierno-soberano-inkg/" style="color:var(--ncolor)">INKG</a>
+  </div>
+</nav>
+
+<section class="gov-hero">
+  <canvas id="particles"></canvas>
+  <div class="gov-seal">🌾</div>
+  <h1 class="gov-title">Nacion Soberana Nivaclé</h1>
+  <p class="gov-sub">Gobierno soberano autonomo bajo la constitucion digital de Ierahkwa Ne Kanienke. Region Sur América. Paraguay. Custodios ancestrales de la tierra.</p>
+  <div class="badge-row">
+    <span class="gbadge">Region Sur América</span>
+    <span class="gbadge">ID: GOV-20185</span>
+    <span class="gbadge">Soberano</span>
+    <span class="gbadge">Blockchain</span>
+    <span class="gbadge">Ciudadania Dual</span>
+  </div>
+</section>
+
+<div class="stat-row">
+  <div class="stat"><div class="sv">16</div><div class="sl">Departamentos</div></div>
+  <div class="stat"><div class="sv">6</div><div class="sl">Ramas de Poder</div></div>
+  <div class="stat"><div class="sv">16</div><div class="sl">Servicios Publicos</div></div>
+  <div class="stat"><div class="sv">8</div><div class="sl">Arts. Constitucion</div></div>
+  <div class="stat"><div class="sv">16,000</div><div class="sl">Ciudadanos</div></div>
+  <div class="stat"><div class="sv">48,000</div><div class="sl">IGT Tesoreria</div></div>
+</div>
+
+<section class="section" id="gobierno">
+  <h2>🌾 Ramas de Gobierno</h2>
+  <p class="sd">Gobierno soberano de 6 ramas independientes bajo la Great Law of Peace y la constitucion digital de Ierahkwa.</p>
+  <div class="grid3">
+    <div class="gcard"><div class="gi">🏛️</div><h4>Consejo Soberano</h4><p>Legislatura soberana. Aprueba leyes, presupuestos y tratados por consenso democratico on-chain.</p></div>
+    <div class="gcard"><div class="gi">⚖️</div><h4>Corte Soberana</h4><p>Justicia soberana. Resolucion de disputas, proteccion de derechos constitucionales.</p></div>
+    <div class="gcard"><div class="gi">👤</div><h4>Jefe / Gobernador</h4><p>Ejecutivo soberano. Administracion, relaciones exteriores, representacion oficial.</p></div>
+    <div class="gcard"><div class="gi">🛡️</div><h4>Guardia Soberana</h4><p>Seguridad nacional. Guardia Soberana, defensa territorial, ciberseguridad.</p></div>
+    <div class="gcard"><div class="gi">👴</div><h4>Consejo de Ancianos</h4><p>Sabiduria ancestral. Asesoria espiritual, mediacion, preservacion cultural.</p></div>
+    <div class="gcard"><div class="gi">🌿</div><h4>Comite 7 Generaciones</h4><p>Impacto a 175 anos. Poder de veto sobre proyectos daninos. Guardian del futuro.</p></div>
+  </div>
+</section>
+
+
+<section class="section" id="historia">
+  <h2>📜 Historia y Origen</h2>
+  <p class="sd">Pueblo ancestral de Abya Yala. Guardianes de la selva, las montanas o las costas. Resistencia milenaria contra la colonizacion.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem">
+    <div class="gcard" style="border-top:2px solid var(--ncolor)">
+      <div class="gi">🗺️</div>
+      <h4>Territorio Ancestral</h4>
+      <p>Region: Sur America. Territorio ancestral de la Nacion Nivacle, custodios de estas tierras desde tiempos inmemoriales.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid var(--ncolor)">
+      <div class="gi">🗣️</div>
+      <h4>Lengua</h4>
+      <p>Lengua ancestral de la Nacion Nivacle. Programa de preservacion y revitalizacion lingueistica activo a traves de Ierahkwa.</p>
+    </div>
+  </div>
+
+  <h2 style="margin-top:2rem">⏳ Linea del Tiempo</h2>
+  <p class="sd">Momentos clave en la historia de la Nacion Nivacle.</p>
+  <div class="timeline">
+<div class="tl-item"><div class="tl-year">Pre-contacto</div><div class="tl-text">Civilizacion ancestral en armonia con la tierra</div></div>
+<div class="tl-item"><div class="tl-year">1492-1550</div><div class="tl-text">Invasion europea — resistencia y supervivencia</div></div>
+<div class="tl-item"><div class="tl-year">Siglo XIX</div><div class="tl-text">Independencia de paises pero no de pueblos indigenas</div></div>
+<div class="tl-item"><div class="tl-year">Siglo XX</div><div class="tl-text">Luchas por reconocimiento y derechos territoriales</div></div>
+<div class="tl-item"><div class="tl-year">Siglo XXI</div><div class="tl-text">Soberania digital y reconocimiento con Ierahkwa</div></div>
+  </div>
+</section>
+
+
+<section class="section" id="soberania-origen" style="margin-top:1rem;border:1px solid rgba(0,255,65,.15);border-radius:16px;background:rgba(0,255,65,.03);padding:2rem">
+  <h2 style="color:var(--accent)">🦅 Sovereign Origin — We The People</h2>
+  <p class="sd" style="font-size:.88rem;line-height:1.7">The indigenous peoples of this continent created the <strong style="color:var(--accent)">first constitution in North American history</strong> — the <strong style="color:var(--ncolor)">Gayanashagowa (Great Law of Peace)</strong> of the Haudenosaunee Confederacy, centuries before 1787. Benjamin Franklin, John Adams and the Founding Fathers studied and were directly inspired by this indigenous democratic system. The phrase "We the People" echoes the sovereign governance that indigenous nations practiced for millennia. <strong style="color:#fff">We are the original sovereign peoples. We wrote the first constitution. We are still here.</strong></p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.8rem;margin-top:1.2rem">
+    <div class="gcard" style="border-top:2px solid var(--accent)">
+      <div class="gi">📜</div>
+      <h4 style="color:var(--accent)">Gayanashagowa</h4>
+      <p>The Great Law of Peace — first democratic constitution in the Americas. 117 articles governing the Six Nations Haudenosaunee Confederacy.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid var(--accent)">
+      <div class="gi">🏛️</div>
+      <h4 style="color:var(--accent)">Sovereign Partnership</h4>
+      <p>Each nation rents Ierahkwa infrastructure and earns revenue from transactions, services and platforms. True sovereign partners, not tenants.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid var(--accent)">
+      <div class="gi">⛓️</div>
+      <h4 style="color:var(--accent)">Own Blockchain Node</h4>
+      <p>Every nation operates its own MameyNode blockchain instance (Chain ID 777777) — sovereign treasury, smart contracts, immutable governance.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid var(--accent)">
+      <div class="gi">💰</div>
+      <h4 style="color:var(--accent)">Revenue Sharing</h4>
+      <p>Nations collect fees from every transaction, service and platform usage. Partners who earn — not dependencies who receive.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="constitucion">
+  <h2>📖 Constitucion Digital</h2>
+  <p class="sd">8 articulos fundamentales verificados en blockchain MameyNode — inmutables y transparentes.</p>
+  <div class="const-grid">
+    <div class="const-card"><div class="const-num">ART. I</div><div class="const-t">Soberania</div><div class="const-d">Jurisdiccion exclusiva e inalienable sobre territorio, pueblo y gobierno.</div></div>
+    <div class="const-card"><div class="const-num">ART. II</div><div class="const-t">Territorio</div><div class="const-d">Tierra inalienable e indivisible. Custodios ancestrales desde tiempos inmemoriales.</div></div>
+    <div class="const-card"><div class="const-num">ART. III</div><div class="const-t">Ciudadania</div><div class="const-d">Hereditaria y permanente. Ciudadania dual: Nivaclé + Ierahkwa.</div></div>
+    <div class="const-card"><div class="const-num">ART. IV</div><div class="const-t">Gobierno</div><div class="const-d">6 ramas: Consejo, Corte, Ejecutivo, Guardia, Ancianos, 7 Generaciones.</div></div>
+    <div class="const-card"><div class="const-num">ART. V</div><div class="const-t">Derechos</div><div class="const-d">Libertad, tierra, educacion, salud, vivienda, agua, energia. Zero discriminacion.</div></div>
+    <div class="const-card"><div class="const-num">ART. VI</div><div class="const-t">Economia</div><div class="const-d">Tesoreria blockchain. Token IGT. Comercio inter-naciones. Creditos soberanos.</div></div>
+    <div class="const-card"><div class="const-num">ART. VII</div><div class="const-t">7 Generaciones</div><div class="const-d">Toda decision evaluada a 175 anos. Comite con poder de veto constitucional.</div></div>
+    <div class="const-card"><div class="const-num">ART. VIII</div><div class="const-t">Tratados</div><div class="const-d">Ley suprema verificada en blockchain. Smart contracts inmutables.</div></div>
+  </div>
+</section>
+
+
+<section class="section" id="licencia-revenue" style="margin-top:1rem">
+  <h2 style="color:var(--accent)">📋 License & Revenue Model</h2>
+  <p class="sd" style="font-size:.85rem;line-height:1.7"><strong style="color:var(--accent)">Ierahkwa Ne Kanienke</strong> administers, controls and licenses all sovereign software. Each nation receives a <strong style="color:var(--ncolor)">perpetual sovereign license</strong> — operating their own infrastructure, collecting revenue, and sharing profits through smart contracts on MameyNode blockchain.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem;margin-top:1rem">
+    <div class="gcard" style="border-top:2px solid var(--accent)">
+      <div class="gi">🔑</div>
+      <h4 style="color:var(--accent)">Ierahkwa — Admin & Control</h4>
+      <p>Full administrative control of all sovereign software. Platform development, security updates, AI agents, blockchain protocol — managed by Ierahkwa central.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid var(--ncolor)">
+      <div class="gi">📋</div>
+      <h4>Sovereign License</h4>
+      <p>Perpetual license granted to each nation. Full usage rights for all 1,111 platforms, 29 NEXUS portals, 110 IGT tokens and 7 AI agents.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid #ffd600">
+      <div class="gi">💰</div>
+      <h4 style="color:#ffd600">Revenue Sharing</h4>
+      <p>Smart contract-enforced profit sharing. Nations earn from every transaction, service fee and platform usage. Transparent, immutable, automatic.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid #f44336">
+      <div class="gi">🏗️</div>
+      <h4 style="color:#f44336">Infrastructure Lease</h4>
+      <p>51 sovereign servers, 8 global satellites, MameyNode blockchain — all infrastructure provided by Ierahkwa. Nations lease and operate independently.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="banco-nacional" style="margin-top:1rem;border:1px solid rgba(255,214,0,.2);border-radius:16px;background:rgba(255,214,0,.03);padding:2rem">
+  <h2 style="color:#ffd600">🏦 National Sovereign Bank</h2>
+  <p class="sd" style="font-size:.85rem;line-height:1.7">Every nation operates its own <strong style="color:#ffd600">National Sovereign Bank</strong> powered by BDET Banking System on MameyNode blockchain. Full treasury management, SWIFT integration, multi-currency support and sovereign monetary policy — completely independent.</p>
+  <div class="stat-row" style="margin:1.5rem 0">
+    <div class="stat"><div class="sv" style="color:#ffd600">BDET</div><div class="sl">Banking System</div></div>
+    <div class="stat"><div class="sv" style="color:#ffd600">SWIFT</div><div class="sl">International</div></div>
+    <div class="stat"><div class="sv" style="color:#ffd600">IGT</div><div class="sl">Sovereign Token</div></div>
+    <div class="stat"><div class="sv" style="color:#ffd600">WMP</div><div class="sl">WAMPUM Currency</div></div>
+    <div class="stat"><div class="sv" style="color:#ffd600">24/7</div><div class="sl">Operations</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.8rem">
+    <div class="gcard" style="border-top:2px solid #ffd600">
+      <div class="gi">💳</div>
+      <h4 style="color:#ffd600">Treasury Management</h4>
+      <p>Sovereign treasury with multi-sig wallets. National reserves, budget allocation, spending controls — all on-chain transparent.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid #ffd600">
+      <div class="gi">🌐</div>
+      <h4 style="color:#ffd600">SWIFT Gateway</h4>
+      <p>International wire transfers, correspondent banking, cross-border payments. Connected to global financial system.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid #ffd600">
+      <div class="gi">🪙</div>
+      <h4 style="color:#ffd600">IGT Token Operations</h4>
+      <p>Mint, transfer, stake and govern IGT tokens. Smart contract-powered monetary policy. Deflationary mechanism built-in.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid #ffd600">
+      <div class="gi">📊</div>
+      <h4 style="color:#ffd600">Forex & Trading</h4>
+      <p>Sovereign forex desk. WMP/USD, WMP/EUR, IGT/BTC pairs. Derivatives trading on MameyNode DEX.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid #ffd600">
+      <div class="gi">🏠</div>
+      <h4 style="color:#ffd600">Citizen Banking</h4>
+      <p>Personal accounts, savings, micro-loans, insurance. Zero-fee banking for all tribal citizens. Mobile-first.</p>
+    </div>
+    <div class="gcard" style="border-top:2px solid #ffd600">
+      <div class="gi">📈</div>
+      <h4 style="color:#ffd600">Revenue Collection</h4>
+      <p>Automatic fee collection from transactions, services and platform usage. Smart contract splits revenue between nation and Ierahkwa.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:1.5rem;padding:1rem;background:rgba(255,214,0,.06);border:1px solid rgba(255,214,0,.15);border-radius:12px">
+    <div style="font-family:'Orbitron',sans-serif;font-size:.75rem;color:#ffd600;font-weight:700;margin-bottom:.3rem">NATIONAL SOVEREIGN BANK — POWERED BY BDET + MAMEYNODE</div>
+    <div style="font-size:.7rem;color:var(--txt2)">Chain ID 777777 · SWIFT Connected · IGT + WMP · Smart Contract Revenue Sharing · 24/7 Operations</div>
+  </div>
+</section>
+
+<section class="section" id="servicios">
+  <h2>⚡ Servicios Publicos</h2>
+  <p class="sd">16 servicios soberanos digitales para todos los ciudadanos de la Nacion Nivaclé.</p>
+  <div class="grid4">
+    <div class="gcard"><div class="gi">🏥</div><h4>Salud</h4></div>
+    <div class="gcard"><div class="gi">🎓</div><h4>Educacion</h4></div>
+    <div class="gcard"><div class="gi">🏠</div><h4>Vivienda</h4></div>
+    <div class="gcard"><div class="gi">💧</div><h4>Agua</h4></div>
+    <div class="gcard"><div class="gi">⚡</div><h4>Energia</h4></div>
+    <div class="gcard"><div class="gi">🏗️</div><h4>Infraestructura</h4></div>
+    <div class="gcard"><div class="gi">👶</div><h4>Bienestar Infantil</h4></div>
+    <div class="gcard"><div class="gi">👴</div><h4>Ancianos</h4></div>
+    <div class="gcard"><div class="gi">🌾</div><h4>Agricultura</h4></div>
+    <div class="gcard"><div class="gi">🚒</div><h4>Bomberos</h4></div>
+    <div class="gcard"><div class="gi">🚔</div><h4>Policia</h4></div>
+    <div class="gcard"><div class="gi">📋</div><h4>Registro Civil</h4></div>
+    <div class="gcard"><div class="gi">💼</div><h4>Desarrollo Economico</h4></div>
+    <div class="gcard"><div class="gi">🌿</div><h4>Recursos Naturales</h4></div>
+    <div class="gcard"><div class="gi">⚖️</div><h4>Tribunal</h4></div>
+    <div class="gcard"><div class="gi">📡</div><h4>Telecomunicaciones</h4></div>
+  </div>
+</section>
+
+<section class="section" id="infraestructura">
+  <h2>🏗️ Infraestructura y Creditos</h2>
+  <p class="sd">Ierahkwa provee infraestructura y creditos para que la Nacion Nivaclé construya su ecosistema soberano.</p>
+  <div class="grid3">
+    <div class="gcard"><div class="gi">📡</div><h4>Telecomunicaciones</h4><p>Red mesh soberana, internet, VoIP, radio — 250,000 IGT credito</p></div>
+    <div class="gcard"><div class="gi">🔒</div><h4>Ciberseguridad</h4><p>Firewall cuantico, antivirus, criptografia — 200,000 IGT credito</p></div>
+    <div class="gcard"><div class="gi">🧠</div><h4>IA y Quantum</h4><p>Modelos de IA, cloud soberana, IoT — 300,000 IGT credito</p></div>
+    <div class="gcard"><div class="gi">⛓️</div><h4>Blockchain</h4><p>Nodo MameyNode, smart contracts, tokenizacion — 200,000 IGT credito</p></div>
+    <div class="gcard"><div class="gi">🏥</div><h4>Salud Digital</h4><p>Telemedicina, historial blockchain, farmacia — 250,000 IGT credito</p></div>
+    <div class="gcard"><div class="gi">🎓</div><h4>Educacion Digital</h4><p>Universidad soberana, LMS, certificaciones — 200,000 IGT credito</p></div>
+    <div class="gcard"><div class="gi">🏛️</div><h4>Gobierno Digital</h4><p>Votacion on-chain, registro, servicios — 200,000 IGT credito</p></div>
+    <div class="gcard"><div class="gi">⚡</div><h4>Energia</h4><p>Solar, eolica, microgrids soberanas — 200,000 IGT credito</p></div>
+    <div class="gcard"><div class="gi">🛒</div><h4>Comercio</h4><p>Marketplace, logistica, export — 150,000 IGT credito</p></div>
+  </div>
+  <div style="text-align:center;margin-top:1.5rem;padding:1rem;background:rgba(0,255,65,.05);border:1px solid rgba(0,255,65,.15);border-radius:12px">
+    <div style="font-family:'Orbitron',sans-serif;font-size:1.2rem;color:var(--accent);font-weight:900">2,200,000 IGT</div>
+    <div style="font-size:.75rem;color:var(--txt2)">Credito total soberano · Zero interes · Inversion comunitaria</div>
+  </div>
+</section>
+
+
+<!-- DEPARTAMENTOS CENTRALES CONECTADOS -->
+<section class="section" id="departamentos" style="margin-top:1rem">
+  <h2 style="color:var(--accent)">🏛️ Departamentos Centrales Conectados</h2>
+  <p class="sd">16 departamentos del gobierno central Ierahkwa conectados en tiempo real via BroadcastChannel API y blockchain MameyNode.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.6rem">
+    <a href="../departamentos-centrales/#dept-finanzas" class="gcard" style="text-decoration:none;border-top:2px solid #ffd600;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">💰</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#ffd600;margin-bottom:.2rem">Finanzas</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-marketing" class="gcard" style="text-decoration:none;border-top:2px solid #e040fb;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">📢</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#e040fb;margin-bottom:.2rem">Marketing</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-defensa" class="gcard" style="text-decoration:none;border-top:2px solid #f44336;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🛡️</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#f44336;margin-bottom:.2rem">Defensa</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-justicia" class="gcard" style="text-decoration:none;border-top:2px solid #1565c0;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">⚖️</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#1565c0;margin-bottom:.2rem">Justicia</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-educacion" class="gcard" style="text-decoration:none;border-top:2px solid #9C27B0;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🎓</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#9C27B0;margin-bottom:.2rem">Educacion</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-salud" class="gcard" style="text-decoration:none;border-top:2px solid #FF5722;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🏥</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#FF5722;margin-bottom:.2rem">Salud</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-tecnologia" class="gcard" style="text-decoration:none;border-top:2px solid #7c4dff;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🧠</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#7c4dff;margin-bottom:.2rem">Tecnologia</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-telecomunicaciones" class="gcard" style="text-decoration:none;border-top:2px solid #00bcd4;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🛰️</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#00bcd4;margin-bottom:.2rem">Telecomunicaciones</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-comercio" class="gcard" style="text-decoration:none;border-top:2px solid #FF6D00;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🛒</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#FF6D00;margin-bottom:.2rem">Comercio</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-tierra" class="gcard" style="text-decoration:none;border-top:2px solid #43a047;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🌿</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#43a047;margin-bottom:.2rem">Tierra y Ambiente</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-cultura" class="gcard" style="text-decoration:none;border-top:2px solid #00FF41;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🎭</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#00FF41;margin-bottom:.2rem">Cultura y Patrimonio</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-infraestructura" class="gcard" style="text-decoration:none;border-top:2px solid #ff9100;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🏗️</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#ff9100;margin-bottom:.2rem">Infraestructura</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-asuntos-exteriores" class="gcard" style="text-decoration:none;border-top:2px solid #304FFE;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🌎</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#304FFE;margin-bottom:.2rem">Asuntos Exteriores</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-bienestar" class="gcard" style="text-decoration:none;border-top:2px solid #607D8B;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🤝</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#607D8B;margin-bottom:.2rem">Bienestar Social</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-registro" class="gcard" style="text-decoration:none;border-top:2px solid #26C6DA;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">📋</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#26C6DA;margin-bottom:.2rem">Registro Civil</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+    <a href="../departamentos-centrales/#dept-espacial" class="gcard" style="text-decoration:none;border-top:2px solid #1a237e;padding:1rem;text-align:center">
+      <div style="font-size:1.5rem;margin-bottom:.3rem">🚀</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#1a237e;margin-bottom:.2rem">Espacial y Cosmos</div>
+      <div style="font-size:.55rem;color:var(--txt2)">7 servicios</div>
+      <div style="margin-top:.3rem;display:inline-block;padding:.15rem .4rem;border-radius:1rem;font-size:.5rem;background:rgba(0,255,65,.08);color:var(--accent);font-weight:700">● Conectado</div>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:1rem;padding:.8rem;background:rgba(0,255,65,.03);border:1px solid rgba(0,255,65,.1);border-radius:12px">
+    <div style="font-size:.7rem;color:var(--txt2)">
+      <strong style="color:var(--accent)">112 servicios</strong> disponibles via departamentos centrales ·
+      <strong style="color:var(--accent)">BroadcastChannel</strong> tiempo real ·
+      <strong style="color:var(--accent)">MameyNode</strong> blockchain verificado
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plataformas">
+  <h2>🌐 Plataformas Conectadas</h2>
+  <p class="sd">Acceso completo a las 880 plataformas del ecosistema Ierahkwa a traves de 28 NEXUS mega-portales.</p>
+  <div class="plat-grid">
+    <a href="../nexus-orbital/" class="plat-chip">🛰️ Orbital</a>
+    <a href="../nexus-escudo/" class="plat-chip">🔒 Escudo</a>
+    <a href="../nexus-cerebro/" class="plat-chip">🧠 Cerebro</a>
+    <a href="../nexus-tesoro/" class="plat-chip">💰 Tesoro</a>
+    <a href="../nexus-voces/" class="plat-chip">📢 Voces</a>
+    <a href="../nexus-consejo/" class="plat-chip">🏛️ Consejo</a>
+    <a href="../nexus-tierra/" class="plat-chip">🌿 Tierra</a>
+    <a href="../nexus-forja/" class="plat-chip">🔧 Forja</a>
+    <a href="../nexus-urbe/" class="plat-chip">🏙️ Urbe</a>
+    <a href="../nexus-raices/" class="plat-chip">🎭 Raices</a>
+    <a href="../nexus-salud/" class="plat-chip">❤️ Salud</a>
+    <a href="../nexus-academia/" class="plat-chip">🎓 Academia</a>
+    <a href="../nexus-escolar/" class="plat-chip">📚 Escolar</a>
+    <a href="../nexus-entretenimiento/" class="plat-chip">🎮 Entretenimiento</a>
+    <a href="../nexus-escritorio/" class="plat-chip">💻 Escritorio</a>
+    <a href="../nexus-comercio/" class="plat-chip">🛒 Comercio</a>
+    <a href="../nexus-amparo/" class="plat-chip">🤝 Amparo</a>
+    <a href="../nexus-cosmos/" class="plat-chip">🚀 Cosmos</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div style="font-size:2rem;margin-bottom:.5rem">🌾</div>
+  <div class="fn">Nacion Soberana Nivaclé</div>
+  <div class="fs">Region Sur América · GOV-20185 · Paraguay · Ierahkwa Ne Kanienke</div>
+  <div class="fs" style="margin-top:.3rem;opacity:.5">Corporation Sole E0374092011-7 · 100% Soberano</div>
+</footer>
+
+<script>
+(function(){const c=document.getElementById('particles');if(!c)return;const x=c.getContext('2d');let W,H;function r(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight}r();window.addEventListener('resize',r);const p=Array.from({length:40},()=>({x:Math.random()*2000,y:Math.random()*1000,s:Math.random()*2+.5,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)-.1,a:Math.random()*.4+.1}));function d(){x.clearRect(0,0,W,H);p.forEach(i=>{i.x+=i.dx;i.y+=i.dy;if(i.x<0)i.x=W;if(i.x>W)i.x=0;if(i.y<0)i.y=H;if(i.y>H)i.y=0;x.beginPath();x.arc(i.x,i.y,i.s,0,Math.PI*2);x.fillStyle=`#e040fb${Math.round(i.a*255).toString(16).padStart(2,'0')}`;x.fill()});requestAnimationFrame(d)}d()})();
+</script>
+<script src="../shared/ierahkwa-interop.js"></script>
+<script src="../shared/ierahkwa-agents.js"></script>
+</body></html>
